@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerilogLogging", "SerilogLogging\SerilogLogging.csproj", "{19DD087E-8A0D-4104-A955-E3F3FAD4750F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerilogLib", "Serilog\SerilogLib.csproj", "{9FFB17B3-E973-4EB8-A766-0B5C8523EA0F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B6B533FB-2EED-4FED-BCF6-0C92BB006509}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{9426198F-8B56-4E91-A620-EDE7EFB9192F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19DD087E-8A0D-4104-A955-E3F3FAD4750F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19DD087E-8A0D-4104-A955-E3F3FAD4750F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19DD087E-8A0D-4104-A955-E3F3FAD4750F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19DD087E-8A0D-4104-A955-E3F3FAD4750F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FFB17B3-E973-4EB8-A766-0B5C8523EA0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FFB17B3-E973-4EB8-A766-0B5C8523EA0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FFB17B3-E973-4EB8-A766-0B5C8523EA0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FFB17B3-E973-4EB8-A766-0B5C8523EA0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9FFB17B3-E973-4EB8-A766-0B5C8523EA0F} = {B6B533FB-2EED-4FED-BCF6-0C92BB006509}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B170D89F-2880-4060-B97B-1FCC72BF5E8B}
+	EndGlobalSection
+EndGlobal
