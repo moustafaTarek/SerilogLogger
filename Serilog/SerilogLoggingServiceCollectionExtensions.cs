@@ -40,7 +40,7 @@ namespace SerilogLib
             });
 
             
-            loggingBuilder.Services.AddSingleton(sp =>
+            loggingBuilder.Services.AddSingleton<SerilogConfigurations>(sp =>
             {
                 return GetSerilogConfigurations(configuration);
             });
@@ -62,7 +62,7 @@ namespace SerilogLib
             });
 
 
-            loggingBuilder.Services.AddSingleton(sp =>
+            loggingBuilder.Services.AddSingleton<SerilogConfigurations>(sp =>
             {
                 var serilogConfigurations = GetSerilogConfigurations(configuration);
 
@@ -86,7 +86,7 @@ namespace SerilogLib
                 return new SerilogLoggerProvider(serilogService);
             });
 
-            loggingBuilder.Services.AddSingleton(sp =>
+            loggingBuilder.Services.AddSingleton<SerilogConfigurations>(sp =>
             {
                 var serilogConfigurations = SerilogCongFunc(sp);
                 return serilogConfigurations;

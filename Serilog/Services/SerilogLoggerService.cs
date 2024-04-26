@@ -1,17 +1,18 @@
 ﻿using Microsoft.Extensions.Logging;
 using SerilogLib.Interfaces;
-using SerilogLogger = Serilog.ILogger;
+using ISerilogLogger = Serilog.ILogger;
 using Serilog;
 using SerilogLib.Extensions;
 using Serilog.Events;
 using SerilogLib.Entities;
 using SerilogLib.Util;
+using System.Diagnostics;
 
 namespace SerilogLib.Services
 {
     internal class SerilogService : Microsoft.Extensions.Logging.ILogger
     {
-        private SerilogLogger _serilogLogger;
+        private ISerilogLogger _serilogLogger;
 
         public SerilogService(IEnumerable<ISerilogPlugin> serilogPlugins)
         {

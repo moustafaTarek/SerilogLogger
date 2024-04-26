@@ -10,7 +10,7 @@ namespace SerilogLib.Entities
         public string RequestMethod { get; set; }
         public string RequestPath { get; set; }
         public string Message { get; set; }
-        public string MessageTemplate { get; set; }
+        public string ClassName { get; set; }
         public string Level { get; set; }
         public int EventId { get; set; }
         public string EventName { get; set; }
@@ -19,9 +19,5 @@ namespace SerilogLib.Entities
         public string QueryParameters { get; set; }
         public Guid CorrelationId { get; set; }
         public string LogLocation { get; set; }
-        [Column(TypeName = "jsonb")]
-        public string Properties { get; set; }
-        [Column(TypeName = "jsonb")]
-        public string PropsTest { get; set; }
     }
 }

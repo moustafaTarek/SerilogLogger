@@ -66,16 +66,14 @@ namespace SerilogLib.LoggerPlugins
                 {nameof(LogEntry.ClientIpAddress), new SinglePropertyColumnWriter(nameof(LogEntry.ClientIpAddress), PropertyWriteMethod.Raw, NpgsqlDbType.Text, "l") },
                 {nameof(LogEntry.QueryParameters), new SinglePropertyColumnWriter(nameof(LogEntry.QueryParameters), PropertyWriteMethod.Raw, NpgsqlDbType.Text) },
                 {nameof(LogEntry.RequestMethod), new SinglePropertyColumnWriter(nameof(LogEntry.RequestMethod), PropertyWriteMethod.Raw, NpgsqlDbType.Text) },
-                {nameof(LogEntry.Message), new RenderedMessageColumnWriter(NpgsqlDbType.Text) },
+                {nameof(LogEntry.Message), new MessageTemplateColumnWriter(NpgsqlDbType.Text) },
+                {nameof(LogEntry.ClassName), new SinglePropertyColumnWriter(nameof(LogEntry.ClassName), PropertyWriteMethod.Raw, NpgsqlDbType.Text)},
                 {nameof(LogEntry.EventId), new SinglePropertyColumnWriter(nameof(LogEntry.EventId), PropertyWriteMethod.Raw, NpgsqlDbType.Integer) },
                 {nameof(LogEntry.EventName), new SinglePropertyColumnWriter(nameof(LogEntry.EventName), PropertyWriteMethod.Raw, NpgsqlDbType.Text) },
-                {nameof(LogEntry.MessageTemplate), new MessageTemplateColumnWriter(NpgsqlDbType.Text) },
                 {nameof(LogEntry.Level), new LevelColumnWriter(true, NpgsqlDbType.Varchar) },
                 {nameof(LogEntry.CreatedDate), new TimestampColumnWriter(NpgsqlDbType.Timestamp) },
                 {nameof(LogEntry.Exception), new ExceptionColumnWriter(NpgsqlDbType.Text) },
                 {nameof(LogEntry.LogLocation), new SinglePropertyColumnWriter(nameof(LogEntry.LogLocation), PropertyWriteMethod.Raw, NpgsqlDbType.Text) },
-                {nameof(LogEntry.Properties), new LogEventSerializedColumnWriter(NpgsqlDbType.Jsonb) },
-                {nameof(LogEntry.PropsTest), new PropertiesColumnWriter(NpgsqlDbType.Jsonb) },
             };
             return columnWriters;
         }
