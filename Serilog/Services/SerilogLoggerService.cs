@@ -1,12 +1,11 @@
 ﻿using Microsoft.Extensions.Logging;
-using SerilogLib.Interfaces;
-using ISerilogLogger = Serilog.ILogger;
 using Serilog;
-using SerilogLib.Extensions;
 using Serilog.Events;
 using SerilogLib.Entities;
+using SerilogLib.Extensions;
+using SerilogLib.Interfaces;
 using SerilogLib.Util;
-using System.Diagnostics;
+using ISerilogLogger = Serilog.ILogger;
 
 namespace SerilogLib.Services
 {
@@ -49,9 +48,9 @@ namespace SerilogLib.Services
             switch (SerilogUtilities.ConvertMicrosoftLogLevelToSerilogLogLevel(logLevel))
             {
                 case LogEventLevel.Verbose:
-                    _serilogLogger.Verbose(exception, formatter(state, exception), logLevel, eventId); 
+                    _serilogLogger.Verbose(exception, formatter(state, exception), logLevel, eventId);
                     break;
-                
+
                 case LogEventLevel.Debug:
                     _serilogLogger.Debug(exception, formatter(state, exception), logLevel, eventId);
                     break;

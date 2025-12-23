@@ -22,6 +22,7 @@ namespace SerilogLib
             ServiceCollection.AddSingleton<ISerilogPlugin, SerilogDataBasePlugin>();
             ServiceCollection.AddSingleton<ISerilogPlugin, SerilogFilePlugin>();
             ServiceCollection.AddSingleton<ISerilogPlugin, SerilogMailPlugin>();
+            ServiceCollection.AddSingleton<ISerilogPlugin, SerilogLokiPlugin>();
             ServiceCollection.AddSingleton<SerilogService>();
 
             return ServiceCollection;
@@ -33,13 +34,13 @@ namespace SerilogLib
 
             loggingBuilder.Services.AddSerilogLoggerServices();
 
-            loggingBuilder.Services.AddSingleton<ILoggerProvider>(sp=>
+            loggingBuilder.Services.AddSingleton<ILoggerProvider>(sp =>
             {
                 SerilogService serilogService = sp.GetRequiredService<SerilogService>();
                 return new SerilogLoggerProvider(serilogService);
             });
 
-            
+
             loggingBuilder.Services.AddSingleton<SerilogConfigurations>(sp =>
             {
                 return GetSerilogConfigurations(configuration);

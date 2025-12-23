@@ -6,5 +6,6 @@
         public FileConfigurations FileConfigurations { get; set; } = new();
         public ConsoleConfigurations ConsoleConfigurations { get; set; } = new();
         public MailConfigurations MailConfigurations { get; set; } = new();
+        public LokiConfigurations LokiConfigurations { get; set; } = new();
     }
 }
